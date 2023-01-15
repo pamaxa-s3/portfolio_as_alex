@@ -1,0 +1,145 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.page {
+
+	// .page__main
+	&__main {}
+
+	// .page__services
+	&__services {}
+
+	// .page__portfolio
+	&__portfolio {}
+
+	// .page__career
+	&__career {}
+
+	// .page__blog
+	&__blog {}
+
+	// .page__testimonials
+	&__testimonials {}
+
+	// .page__skills
+	&__skills {}
+
+	// .page__contacts
+	&__contacts {}
+}
+
+
+// -------------------------------------
+
+.title {
+
+	// .title__label
+	&__label {
+		font-weight: 500;
+		font-size: rem(12);
+		line-height: 2;
+		letter-spacing: em(7.5, 12);
+		color: $grayColor;
+		display: flex;
+		align-items: center;
+		gap: rem(16);
+		text-transform: uppercase;
+
+		&:not(:last-child) {
+			margin-bottom: em(9, 12);
+		}
+
+		&::before {
+			content: '';
+			width: rem(16);
+			height: rem(2);
+			background-color: #D9D9D9;
+		}
+	}
+
+	// .title__value
+	&__value {
+		font-family: 'Plus Jakarta Sans';
+		font-weight: 700;
+		line-height: 1.25;
+		@include adaptiveValue("font-size", 36, 28);
+
+		&_big {
+			font-size: rem(44);
+			@include adaptiveValue("font-size", 44, 36);
+			line-height: math.div(55, 44);
+		}
+
+		span {
+			color: $purpleColor;
+		}
+	}
+}
+
+// ---------------------------------
+
+.text {
+	line-height: math.div(32, 16);
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+}
+
+// -------------------------------------
+
+.social {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: rem(5);
+	@include adaptiveValue("column-gap", 34, 25);
+
+	// .social__link
+	&__link {
+		font-size: rem(22);
+		transition: color 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: $purpleColor;
+			}
+		}
+	}
+}
+
+// -----------------------------------------
+
+.category-link {
+	display: inline-block;
+	border: 1px solid #f1f1f1;
+	border-radius: rem(4);
+	color: #656D72;
+	font-size: rem(12);
+	padding: rem(4) rem(8);
+	line-height: math.div(15, 12);
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $purpleColor;
+			border: rem(1) solid $purpleColor;
+			color: #fff;
+		}
+	}
+}
+
+// -----------------------------------------
+
+.date {
+	display: inline-block;
+	padding: rem(4) rem(8);
+	color: $grayColor;
+	background-color: #fbfbfb;
+	font-size: rem(12);
+	font-weight: 500;
+	line-height: math.div(15, 12);
+}
+
+// -----------------------------------------
